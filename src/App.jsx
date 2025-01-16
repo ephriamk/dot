@@ -30,22 +30,22 @@ const DotWebsite = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-200 to-blue-400">
-      {/* Header */}
-      <header className="pt-8 pb-6 text-center">
-        <h1 className="text-4xl font-bold text-white drop-shadow-lg mb-2">
+    <div className="h-screen overflow-hidden flex flex-col bg-gradient-to-b from-blue-200 to-blue-400">
+      {/* Header - using flex-none to prevent shrinking */}
+      <header className="flex-none pt-4 md:pt-8 pb-4 text-center px-4">
+        <h1 className="text-3xl md:text-4xl font-bold text-white drop-shadow-lg mb-2">
           Meet Dot
         </h1>
-        <p className="text-lg text-white drop-shadow">
+        <p className="text-base md:text-lg text-white drop-shadow">
           The friendly butterfly who loves to dance in the sky
         </p>
       </header>
 
-      {/* Main Content */}
-      <main className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto bg-white/30 backdrop-blur-sm rounded-2xl p-6 shadow-lg">
-          {/* Dot's flying area */}
-          <div className="aspect-video relative bg-gradient-to-b from-blue-100/50 to-blue-200/50 rounded-xl overflow-hidden">
+      {/* Main Content - using flex-1 to fill available space */}
+      <main className="flex-1 flex items-center justify-center px-4 min-h-0">
+        <div className="w-full max-w-4xl bg-white/30 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-lg">
+          {/* Dot's flying area with maintained aspect ratio */}
+          <div className="w-full aspect-video relative bg-gradient-to-b from-blue-100/50 to-blue-200/50 rounded-xl overflow-hidden">
             <svg viewBox="0 0 400 300" className="w-full h-full">
               {/* Decorative clouds */}
               <g className="opacity-50">
@@ -143,8 +143,8 @@ const DotWebsite = () => {
         </div>
       </main>
 
-      {/* Footer */}
-      <footer className="text-center py-6 text-white/80 text-sm">
+      {/* Footer - using flex-none to prevent shrinking */}
+      <footer className="flex-none text-center py-4 text-white/80 text-sm px-4">
         <p>© 2025 Dot the Butterfly • Spreading joy one wing flap at a time</p>
       </footer>
     </div>
